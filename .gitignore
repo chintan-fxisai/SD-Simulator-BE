@@ -1,0 +1,125 @@
+    # ===========================
+# Python
+# ===========================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# ===========================
+# Virtual Environment
+# ===========================
+venv/
+.venv/
+env/
+ENV/
+
+# ===========================
+# IDEs
+# ===========================
+.vscode/
+.idea/
+*.iml
+
+# ===========================
+# Logs
+# ===========================
+*.log
+logs/
+*.pid
+*.seed
+*.out
+*.err
+
+# ===========================
+# Testing
+# ===========================
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+coverage.xml
+*.cover
+
+# ===========================
+# Type Checking / Linting
+# ===========================
+.mypy_cache/
+.pyre/
+.pytype/
+.ruff_cache/
+
+# ===========================
+# Build / Distribution
+# ===========================
+build/
+dist/
+*.egg-info/
+.eggs/
+*.egg
+pip-wheel-metadata/
+
+# ===========================
+# Jupyter Notebook
+# ===========================
+.ipynb_checkpoints/
+
+# ===========================
+# Database Files
+# ===========================
+*.db
+*.sqlite
+*.sqlite3
+
+# ===========================
+# Alembic
+# ===========================
+alembic/__pycache__/
+alembic/versions/__pycache__/
+
+# Uncomment if you don't want migration files in git
+# alembic/versions/*
+
+# ===========================
+# Uploads / Media
+# ===========================
+uploads/
+media/
+tmp/
+temp/
+
+# ===========================
+# Cache
+# ===========================
+.cache/
+
+# ===========================
+# Docker
+# ===========================
+docker-compose.override.yml
+*.tar
+
+# ===========================
+# OS Files
+# ===========================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ===========================
+# Secrets / Certificates
+# ===========================
+*.pem
+*.key
+*.crt
+*.p12
+*.cer
+
+# ===========================
+# Local Config
+# ===========================
+*.local
+*.bak
+*.swp
