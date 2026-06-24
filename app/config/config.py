@@ -15,6 +15,10 @@ load_dotenv(dotenv_path=ENV_PATH)
 #Extract variables from .env file
 class Settings:
 
+    #Application details
+    APP_NAME=os.getenv("APP_NAME")
+    APP_ENV=os.getenv("APP_ENV")
+
     #Database settings
     DB_NAME=os.getenv("DB_NAME")
     DB_HOST=os.getenv("DB_HOST")
@@ -24,12 +28,15 @@ class Settings:
 
     
     def construct_db_url(self) -> str:
-
         DB_URL: str = f"postgresql+asyncpg://{self.DB_USER}:{self.DB_PASSWORD}@{self.DB_HOST}:{self.DB_PORT}/{self.DB_NAME}"
-
         return DB_URL
+
+    #Logger
+    LOGGER_LEVEL=os.getenv("LOGGER_LEVEL")
 
 
 
 
 settings=Settings()
+
+
