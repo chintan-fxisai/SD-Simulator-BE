@@ -101,6 +101,27 @@ class User(Base):
         back_populates="invited_by",
         foreign_keys="UserTenant.invited_by_user_id",
     )
+
+    oauth_accounts: Mapped[list["OAuthAccount"]] = relationship(
+        "OAuthAccount",
+        back_populates="user",
+        cascade="all, delete-orphan",
+        foreign_keys="OAuthAccount.user_id",
+    )
+
+    sessions: Mapped[list["UserSession"]] = relationship(
+        "UserSession",
+        back_populates="user",
+        cascade="all, delete-orphan",
+        foreign_keys="UserSession.user_id",
+    )
+
+    revoked_tokens: Mapped[list["RevokedJwtToken"]] = relationship(
+        "RevokedJwtToken",
+        back_populates="user",
+        cascade="all, delete-orphan",
+        foreign_keys="RevokedJwtToken.user_id",
+    )
     __table_args__ = (
         Index(None, "is_deleted"),
         Index(None, "is_active")

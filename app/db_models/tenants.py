@@ -88,6 +88,19 @@ class Tenant(Base):
         cascade="all, delete-orphan",
     )
 
+
+    sessions: Mapped[list["UserSession"]] = relationship(
+        "UserSession",
+        back_populates="tenant",
+        foreign_keys="UserSession.tenant_id",
+    )
+
+    user_roles: Mapped[list["UserRole"]] = relationship(
+        "UserRole",
+        back_populates="tenant",
+        cascade="all, delete-orphan",
+        foreign_keys="UserRole.tenant_id",
+    )
     __table_args__ = (
         ForeignKeyConstraint(["owner_id"], ["users.id"], ondelete="SET NULL"),
         UniqueConstraint("id", "tenant_email", "owner_id"),
