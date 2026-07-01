@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Verify your email</title>
+</head>
+<body style="margin:0; padding:0; background:#f7f8fc; font-family:Arial, Helvetica, sans-serif; color:#111827;">
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background:#f7f8fc; padding:34px 12px;">
+    <tr>
+      <td align="center">
+        <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="max-width:640px; background:#ffffff; border-radius:18px; overflow:hidden; border:1px solid #e6e9f2; box-shadow:0 18px 48px rgba(28, 34, 70, 0.10);">
+          <tr>
+            <td style="padding:34px 34px 12px;">
+              <table role="presentation" width="100%" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td align="left">
+                    <span style="display:inline-block; padding:8px 14px; border-radius:999px; background:#eef0ff; color:#4f46e5; font-size:14px; line-height:18px; font-weight:700;">Now live in your workspace</span>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <tr>
+            <td style="padding:18px 34px 4px;">
+              <h1 style="margin:0; color:#111827; font-size:42px; line-height:48px; font-weight:800; letter-spacing:0;">
+                Book venues.<br>
+                Host events.<br>
+                <span style="color:#4f46e5;">Verify email.</span>
+              </h1>
+            </td>
+          </tr>
+
+          <tr>
+            <td style="padding:18px 34px 4px; font-size:17px; line-height:28px; color:#64748b;">
+              <p style="margin:0 0 14px;">Hi {{ display_name }},</p>
+              <p style="margin:0;">Welcome to {{ app_name }}. Confirm your email address to finish setting up {{ tenant_name }} and start managing events from one clean dashboard.</p>
+            </td>
+          </tr>
+
+          <tr>
+            <td style="padding:28px 34px 10px;">
+              <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="border-radius:18px; background:#4f46e5; box-shadow:0 24px 44px rgba(79, 70, 229, 0.24);">
+                <tr>
+                  <td style="padding:20px;">
+                    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background:linear-gradient(135deg, #fb9812 0%, #fb4d36 100%); border-radius:14px; overflow:hidden;">
+                      <tr>
+                        <td style="padding:24px 24px 82px; color:#ffffff; font-size:13px; line-height:8px; font-weight:700; letter-spacing:0;">
+                          {{ app_name }}
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style="background:#ffffff; padding:22px 22px 20px; color:#111827;">
+                          <p style="margin:0 0 7px; font-size:20px; line-height:26px; font-weight:800;">Email verification pass</p>
+                          <p style="margin:0 0 16px; color:#64748b; font-size:14px; line-height:22px;">{{ tenant_name }} - expires in {{ expires_in_minutes }} minutes</p>
+                          <table role="presentation" cellspacing="0" cellpadding="0">
+                            <tr>
+                              <td style="background:#ccfbf1; color:#0f766e; border-radius:999px; padding:8px 13px; font-size:13px; line-height:16px; font-weight:800;">Secure link ready</td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <tr>
+            <td align="left" style="padding:22px 34px 12px;">
+              <a href="{{ verification_link }}" style="display:inline-block; background:#4f46e5; color:#ffffff; text-decoration:none; font-size:16px; line-height:20px; font-weight:800; padding:16px 24px; border-radius:12px; box-shadow:0 12px 24px rgba(79, 70, 229, 0.28);">Verify Email</a>
+            </td>
+          </tr>
+
+          <tr>
+            <td style="padding:8px 34px 30px; font-size:13px; line-height:21px; color:#64748b;">
+              <p style="margin:0 0 12px;">If the button does not work, copy and paste this link into your browser:</p>
+              <p style="margin:0; word-break:break-all;"><a href="{{ verification_link }}" style="color:#4f46e5; text-decoration:underline;">{{ verification_link }}</a></p>
+            </td>
+          </tr>
+
+          <tr>
+            <td style="background:#f8fafc; padding:20px 34px; border-top:1px solid #e6e9f2; color:#94a3b8; font-size:12px; line-height:18px;">
+              <p style="margin:0;">You received this email because an account was created for {{ app_name }}. If this was not you, you can safely ignore it.</p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

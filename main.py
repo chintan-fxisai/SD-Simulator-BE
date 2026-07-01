@@ -1,7 +1,7 @@
 from contextlib import asynccontextmanager
 import logging
 
-from fastapi import FastAPI
+from fastapi import APIRouter, FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.core.logger import setup_logging
@@ -67,9 +67,18 @@ app.add_middleware(
 
 
 # --------------------------------
+# API Router
+# --------------------------------
+from app.routes.auth.register import router as auth_router
+
+
+api_router = APIRouter(prefix=settings.API_PREFIX)
+api_router.include_router(auth_router)
+
+# --------------------------------
 # Health Check Endpoint
 # --------------------------------
-@app.get(
+@api_router.get(
     "/health",
     tags=["Health"],
     summary="Health Check"
@@ -82,4 +91,26 @@ async def health_check():
         "service": "Event Management System API",
         "application_environment": settings.APP_ENV
     }
+
+
+# --------------------------------
+# Root Endpoint
+# --------------------------------
+@api_router.get(
+    "/",
+    tags=["Root"],
+    summary="Root Endpoint for the Backend Service."
+)
+async def root():
+    logger.info("Root endpoint called !")
+
+    return {
+        "status": "ok",
+        "message": "Welcome to the Event Management System",
+        "service": "Event Management System",
+        "application_environment": settings.APP_ENV,
+    }
+
+# API Router
+app.include_router(api_router)
 

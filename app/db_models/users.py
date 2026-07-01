@@ -42,6 +42,8 @@ class User(Base):
     
     is_active: Mapped[bool] = mapped_column(Boolean, nullable=False, server_default=sqlalchemy.text("False"))
     
+    is_verified: Mapped[bool] = mapped_column(Boolean, nullable=False, server_default=sqlalchemy.text("False"))
+
     is_deleted: Mapped[bool] = mapped_column(Boolean, nullable=False, server_default=sqlalchemy.text("False")) 
     
     is_super_admin: Mapped[bool] = mapped_column(Boolean, nullable=False, server_default=sqlalchemy.text("False"))

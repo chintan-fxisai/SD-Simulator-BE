@@ -29,7 +29,6 @@ Base = declarative_base(metadata=metadata)
 # Create async engine for DB
 async_engine = create_async_engine(
     DATABASE_URL,
-    echo=True,                 # Logs SQL Queries, need to be false while in production
     pool_pre_ping=True,        # Check connection health before executing the query
     pool_size=5,               # Standard pool size
     max_overflow=10,           # Max extra connections allowed under heavy load
